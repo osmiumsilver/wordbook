@@ -1,13 +1,18 @@
 package wordbook.data;
-/**
- * 项目初始化：创建表
+/*
+  项目初始化：创建表
  */
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class FirstTimeInitializer extends ConnectDatabase {
+public class FirstTimeInitializer {
+
+    final Connection con = new ConnectDatabase().getCon();  //实例化ConnectDatabase类 调用get方法获取变量
+//    Connection con = new ConnectDatabase().con;
+
+    // 创建表word_table
     public FirstTimeInitializer() {
         connectDatabase();
         try {
